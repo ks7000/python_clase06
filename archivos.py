@@ -2,9 +2,10 @@
 import os
 import sys
 import glob
+import click
 
-#import pdb
-#pdb.set_trace()
+@click.command()
+@click.option('--archivo_original', prompt='"Introduzca el(los) nombre(s) de el(os) archivo(s) original(es):"', help='Se necesita un archivo origen al cual copiar y mostrar por pantalla.')
 def lee(*args):
     for i in args:
         if isinstance(i,str):
@@ -51,18 +52,9 @@ def lee_archivo_varias_lineas(archivo):
     print "Lee varias lineas sin ciclo for:"
     print (f.readlines())
     f.close
-
-#def lista_txt():
-#    nombres = os.listdir(os.getcwd))
-#    for i in nombres:
-#        cad = i
-#        if string.find(cad,"*.txt"):
-#            print cad
-        
-            
-if sys.platform == "linux2":
-    os.system('clear')
-#lista_txt()
-print glob.glob('*.txt')
-archivo = raw_input("Introduzca el(los) nombre(s) de el(os) archivo(s) original(es):");
-lee(archivo)
+     
+if __name__ == '__main__':
+    if sys.platform == "linux2":
+        os.system('clear')
+    print glob.glob('*.txt')
+    lee()
