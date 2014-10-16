@@ -2,8 +2,9 @@
 import os
 import sys
 import glob
-import pdb
-pdb.set_trace()
+
+#import pdb
+#pdb.set_trace()
 def lee(*args):
     for i in args:
         if isinstance(i,str):
